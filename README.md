@@ -1,6 +1,7 @@
 Project Plan : Home electrical management
 
-Group Name 	: Trio Eco
+Group Name 	: Zikaen
+
 Nama Anggota : 
 1.	H071231035 – Zahra Salsabila
 2.	H071231003 – Frisilia Kiki 
