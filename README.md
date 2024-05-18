@@ -1,5 +1,5 @@
-Project Plan
-Home electrical management
+Project Plan : Home electrical management
+
 Group Name 	: Trio Eco
 Nama Anggota : 
 1.	H071231035 – Zahra Salsabila
