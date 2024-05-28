@@ -9,6 +9,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,26 +18,24 @@ import javafx.scene.control.cell.PropertyValueFactory;
 // import javafx.geometry.Pos;
 // import javafx.collections.FXCollections;
 
-public class ElectricityView extends Application {
+public class ElectricityView {
     private ElectricityController controller;
     private TableView<Electricity> table; // Pindahkan deklarasi TableView ke sini
+    private Stage stage;
 
-    public static void main(String[] args) {
-        launch(args);
+
+    public ElectricityView(Stage stage, ElectricityController controller){
+        this.stage= stage;
+        this.controller = controller;
     }
+    
+    public void show() {
 
-    @Override
-    public void start(Stage primaryStage) {
+        StackPane root = new StackPane();
+        root.setId("root");
+        stage.setTitle("Electricity Usage");
 
-        controller = new ElectricityController();
-    
-        primaryStage.setTitle("Electricity Usage");
-    
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets(10, 10, 10, 10));
-        grid.setVgap(8);
-        grid.setHgap(10);
-    
+
         Label nameLabel = new Label("Name:");
         GridPane.setConstraints(nameLabel, 0, 0);
         TextField nameInput = new TextField();
@@ -99,16 +99,26 @@ public class ElectricityView extends Application {
             
         });
         Button calculateButton = new Button("Calculate Total Consumption");
-        GolonganScene gls = new GolonganScene(primaryStage, controller);
+        GolonganScene gls = new GolonganScene(stage, controller);
         GridPane.setConstraints(calculateButton, 1, 4);
         calculateButton.setOnAction(e-> gls.show());
+        
 
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(8);
+        grid.setHgap(10);
         grid.getChildren().addAll(nameLabel, nameInput, jamLabel, jamInput, wattLabel, wattInput, addButton, calculateButton, clearButton);
+        root.getChildren().addAll(grid);
+
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(grid, table);
-        Scene scene = new Scene(layout, 400, 300);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        layout.getChildren().addAll(root, table);
+
+        Scene scene = new Scene(layout, 740, 480);
+        scene.getStylesheets().add(getClass().getResource("/style/Styles.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
 
     }
+
 }
