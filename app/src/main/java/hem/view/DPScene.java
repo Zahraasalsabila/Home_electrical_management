@@ -36,9 +36,14 @@ public class DPScene {
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
+        Button kembali = new Button("Kembali");
+        kembali.setOnAction(e -> {
+            ElectricityView electricityView = new ElectricityView(stage, controller);
+            electricityView.show();
+        });
 
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(P_1, P_2, P_3);
+        layout.getChildren().addAll(P_1, P_2, P_3, kembali);
         Scene scene = new Scene(layout, 400, 300);
         stage.setScene(scene);
         stage.show();

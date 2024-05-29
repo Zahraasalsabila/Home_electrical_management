@@ -1,51 +1,24 @@
-/* styles.css
-
-.root {
-    -fx-font-family: 'Arial';
-    -fx-background-color: #f0f0f0;
-}
-
-.label {
-    -fx-text-fill: white;
-}
-
-.text-field {
-    -fx-background-color: #dddddd;
-    -fx-text-fill: #333333;
-    -fx-prompt-text-fill: #888888;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-padding: 5px;
-}
-
-.button {
-    -fx-background-color: #dddddd;
-    -fx-text-fill: #333333;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-padding: 5px 10px;
-}
-
-.grid-pane {
-    -fx-background-color: #003366;
-    -fx-padding: 20px;
-    -fx-hgap: 10px;
-    -fx-vgap: 10px;
-    -fx-alignment: center;
-}
-
-.vbox {
-    -fx-spacing: 10px;
-    -fx-padding: 20px;
-}
-
-.table-view {
-    -fx-background-color: #ffffff;
-    -fx-table-cell-border-color: transparent;
-    -fx-padding: 10px;
-} */
-
 .root {
     -fx-background-image: url("/png/BackgroundStart.png");
     /* -fx-background-color: linear-gradient(to bottom, #0033cc, #0059b3); */
+}
+
+.start {
+    
+    -fx-background-image: url("/png/start.png");    
+}
+
+/* style.css */
+.button {
+    -fx-font-family: "System";
+    -fx-font-style: italic;
+    -fx-font-size: 20px;
+    -fx-background-color: rgba(255, 244, 204, 0.9);
+    -fx-border-radius: 9px;
+    -fx-background-radius: 9px;
+    -fx-pref-width: 164px;
+    -fx-pref-height: 34px;
+    -fx-position: absolute;
+    -fx-translate-x: calc(50% - 82px); /* 164px/2 */
+    -fx-translate-y: calc(50% - 17px + 116px); /* 34px/2 + 116px */
 }
