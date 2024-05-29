@@ -7,6 +7,8 @@ import hem.model.Electricity;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -23,6 +25,11 @@ public class ElectricityView {
     }
 
     public void show() {
+
+        // ElectricityView eview = new ElectricityView(stage,controller);
+        // Image image = new Image("/png/start.png"); // Adjust the path as needed
+        // ImageView imageView = new ImageView(image);
+
         StackPane root = new StackPane();
         root.setId("root");
         stage.setTitle("Electricity Usage");
@@ -91,6 +98,10 @@ public class ElectricityView {
         grid.setHgap(10);
         grid.getChildren().addAll(nameLabel, nameInput, jamLabel, jamInput, wattLabel, wattInput, addButton, clearButton, calculateButton, listButton);
         root.getChildren().addAll(grid);
+
+        // VBox layout = new VBox(10);
+        // layout.getChildren().addAll(table, root);
+        // layout.getStyleClass().add("start");
 
         Scene scene = new Scene(root, 740, 480);
         scene.getStylesheets().add(getClass().getResource("/style/Styles.css").toExternalForm());

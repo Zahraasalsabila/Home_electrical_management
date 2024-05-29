@@ -16,35 +16,35 @@ public class DRSScene {
     }
 
     public void show() {
-        Button R_1 = new Button("R1(900 VA)");
+        Button R_1 = new Button("R1 TR 900 VA-RTM ");
         R_1.setOnAction(e -> {
             double hargaPerKwh = 1352;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
 
-        Button R__1 = new Button("R1(1300 VA)");
+        Button R__1 = new Button("R1 TR 1.300 VA");
         R__1.setOnAction(e -> {
             double hargaPerKwh = 1444;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
 
-        Button R___1 = new Button("R1(2200 VA)");
+        Button R___1 = new Button("R1 TR 900 VA-RTM");
         R___1.setOnAction(e -> {
             double hargaPerKwh = 1444;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
 
-        Button R_2 = new Button("R2(3500 VA)");
+        Button R_2 = new Button("R2 TR 3.500 VA-5.500 VA");
         R_2.setOnAction(e -> {
             double hargaPerKwh = 1444;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
 
-        Button R_3 = new Button("R3(6600 VA)");
+        Button R_3 = new Button("R3 TR 6.600 VA");
         R_3.setOnAction(e -> {
             double hargaPerKwh = 1444;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);

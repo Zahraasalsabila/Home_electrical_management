@@ -32,16 +32,18 @@ public class HomeScene {
         mulai.setLayoutX(288);
         mulai.setLayoutY(339);
         mulai.setOnAction(e -> eview.show());
+        // GolonganScene golonganScene = new GolonganScene(stage, controller);
+        // golonganScene.show();
+            // ElectricityView electricityView = new ElectricityView(stage, controller);
+            // electricityView.show();
+            
+            
 
         
-
-
         StackPane stackPane = new StackPane();
         stackPane.getChildren().addAll(imageView, mulai);
         StackPane.setAlignment(mulai,javafx.geometry.Pos.CENTER);
-        StackPane.setMargin(mulai, new Insets(217, 0, 0, 0));
-
-        StackPane.setMargin(mulai, new Insets(217, 0, 0, 0));
+        StackPane.setMargin(mulai, new Insets(225, 0, 0, 0));
 
 
         Scene scene = new Scene(stackPane,image.getWidth(), image.getHeight());        
