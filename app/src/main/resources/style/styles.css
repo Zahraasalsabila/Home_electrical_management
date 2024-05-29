@@ -3,6 +3,14 @@
     /* -fx-background-color: linear-gradient(to bottom, #0033cc, #0059b3); */
 }
 
+.Rectangle {
+    -fx-background-image: url("/png/Rectangle.png");
+    -fx-background-color: #CBC9BF;
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:relative; 
+}
+
 .start {
     
     -fx-background-image: url("/png/start.png");
@@ -11,17 +19,8 @@
     -fx-background-position: center;
 }
 
-/* style.css */
-.button {
-    -fx-font-family: "System";
-    -fx-font-style: italic;
-    -fx-font-size: 20px;
-    -fx-background-color: rgba(255, 244, 204, 0.9);
-    -fx-border-radius: 9px;
-    -fx-background-radius: 9px;
-    -fx-pref-width: 164px;
-    -fx-pref-height: 34px;
-    -fx-position: absolute;
-    -fx-translate-x: calc(50% - 82px); /* 164px/2 */
-    -fx-translate-y: calc(50% - 17px + 116px); /* 34px/2 + 116px */
-}
+
+
+
+
+

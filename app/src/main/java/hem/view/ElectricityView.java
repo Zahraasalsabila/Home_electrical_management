@@ -9,9 +9,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class ElectricityView {
@@ -49,8 +51,14 @@ public class ElectricityView {
         TextField wattInput = new TextField();
         GridPane.setConstraints(wattInput, 1, 2);
 
-        Button addButton = new Button("Add Usage");
+        Button addButton = new Button("+");
         GridPane.setConstraints(addButton, 1, 3);
+        addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
+        //addButton.getStyleClass().add("Rectangle");
+        addButton.setPrefWidth(34);
+        addButton.setPrefHeight(32);
+        addButton.setLayoutX(212);
+        addButton.setLayoutY(325);
         addButton.setOnAction(e -> {
             String name = nameInput.getText();
             double jam = Double.parseDouble(jamInput.getText());
@@ -70,6 +78,12 @@ public class ElectricityView {
 
         Button clearButton = new Button("Clear Usage");
         GridPane.setConstraints(clearButton, 1, 5);
+        //clearButton.getStyleClass().add("Rectangle");
+        clearButton.setPrefWidth(34);
+        clearButton.setPrefHeight(32);
+        addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
+        clearButton.setLayoutX(212);
+        clearButton.setLayoutY(325);
         clearButton.setOnAction(e -> {
             controller.clearAllElectricity();
             // Ambil ulang data dari database
@@ -80,13 +94,25 @@ public class ElectricityView {
             table.getItems().addAll(electricityListAfterDelete);
         });
 
-        Button calculateButton = new Button("Calculate Total Consumption");
+        Button calculateButton = new Button("Pilih Golongan");
         GolonganScene gls = new GolonganScene(stage, controller);
         GridPane.setConstraints(calculateButton, 1, 4);
+        addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
+        //addButton.getStyleClass().add("Rectangle");
+        calculateButton.setPrefWidth(229);
+        calculateButton.setPrefHeight(32);
+        calculateButton.setLayoutX(373);
+        calculateButton.setLayoutY(322);
         calculateButton.setOnAction(e -> gls.show());
 
         Button listButton = new Button("Daftar");
         GridPane.setConstraints(listButton, 1, 6);
+        addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
+        //addButton.getStyleClass().add("Rectangle");
+        listButton.setPrefWidth(96);
+        listButton.setPrefHeight(29);
+        listButton.setLayoutX(373);
+        listButton.setLayoutY(322);
         listButton.setOnAction(e -> {
             ListScene ls = new ListScene(stage, controller);
             ls.show();
@@ -98,6 +124,8 @@ public class ElectricityView {
         grid.setHgap(10);
         grid.getChildren().addAll(nameLabel, nameInput, jamLabel, jamInput, wattLabel, wattInput, addButton, clearButton, calculateButton, listButton);
         root.getChildren().addAll(grid);
+        root.getStyleClass().add("start");
+        //root.getStyleClass().add("Rectangle");
 
         // VBox layout = new VBox(10);
         // layout.getChildren().addAll(table, root);
