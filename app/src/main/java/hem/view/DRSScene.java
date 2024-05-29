@@ -51,8 +51,15 @@ public class DRSScene {
             hasilScene.show();
         });
 
+        Button kembali = new Button("Kembali");
+
+            kembali.setOnAction(e -> {
+                GolonganScene golonganScene = new GolonganScene(stage, controller);
+                golonganScene.show();
+            });
+
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(R_1, R__1, R___1, R_2, R_3);
+        layout.getChildren().addAll(R_1, R__1, R___1, R_2, R_3, kembali);
         Scene scene = new Scene(layout, 400, 300);
         stage.setScene(scene);
         stage.show();

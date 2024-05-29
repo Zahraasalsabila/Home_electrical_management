@@ -37,8 +37,15 @@ public class GolonganScene {
         Button pemerintah = new Button("Pemerintah");
         pemerintah.setOnAction(e-> dpScene.show());
 
+        Button kembali = new Button("Kembali");
+
+            kembali.setOnAction(e -> {
+                ElectricityView electricityView = new ElectricityView(stage, controller);
+                electricityView.show();
+            });
+
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(rumahTangga, industri, pemerintah);
+        layout.getChildren().addAll(rumahTangga, industri, pemerintah, kembali);
         Scene scene = new Scene(layout, 400, 300);
         stage.setScene(scene);
         stage.show();

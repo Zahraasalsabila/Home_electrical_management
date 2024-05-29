@@ -37,8 +37,15 @@ public class DPScene {
             hasilScene.show();
         });
 
+        Button kembali = new Button("Kembali");
+
+            kembali.setOnAction(e -> {
+                GolonganScene golonganScene = new GolonganScene(stage, controller);
+                golonganScene.show();
+            });
+
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(P_1, P_2, P_3);
+        layout.getChildren().addAll(P_1, P_2, P_3, kembali);
         Scene scene = new Scene(layout, 400, 300);
         stage.setScene(scene);
         stage.show();
