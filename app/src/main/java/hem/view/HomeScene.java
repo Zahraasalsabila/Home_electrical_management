@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.geometry.Insets;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
@@ -32,9 +33,14 @@ public class HomeScene {
         mulai.setLayoutY(339);
         mulai.setOnAction(e -> eview.show());
 
+        
+
+
         StackPane stackPane = new StackPane();
         stackPane.getChildren().addAll(imageView, mulai);
         StackPane.setAlignment(mulai,javafx.geometry.Pos.CENTER);
+        StackPane.setMargin(mulai, new Insets(217, 0, 0, 0));
+
         StackPane.setMargin(mulai, new Insets(217, 0, 0, 0));
 
 

@@ -46,11 +46,12 @@ public class DIScene {
 
         Button kembali = new Button("Kembali");
         kembali.setOnAction(e -> {
-            ElectricityView electricityView = new ElectricityView(stage, controller);
-            electricityView.show();
+            GolonganScene golonganScene = new GolonganScene(stage, controller);
+            golonganScene.show();
         });
+
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(B_2, B_3, I_3, I_4,kembali);
+        layout.getChildren().addAll(B_2, B_3, I_3, I_4, kembali);
         Scene scene = new Scene(layout, 400, 300);
         stage.setScene(scene);
         stage.show();
