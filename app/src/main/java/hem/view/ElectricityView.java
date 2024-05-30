@@ -68,56 +68,45 @@ public class ElectricityView {
         wattInput.setPrefSize(229, 32);
         GridPane.setConstraints(wattInput, 1, 2);
 
-        Button addButton = new Button("+");
+        Button addButton = new Button("tambah");
         GridPane.setConstraints(addButton, 1, 3);
         addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
-        addButton.setPrefWidth(34);
+        addButton.setPrefWidth(96);
         addButton.setPrefHeight(32);
         addButton.setLayoutX(212);
         addButton.setLayoutY(325);
         addButton.setOnAction(e -> {
-            String name = nameInput.getText();
-            double jam = Double.parseDouble(jamInput.getText());
-            double watt = Double.parseDouble(wattInput.getText());
-            controller.addElectricity(new Electricity(name, jam, watt));
-            nameInput.clear();
-            jamInput.clear();
-            wattInput.clear();
+            try {
+                String name = nameInput.getText();
+                double jam = Double.parseDouble(jamInput.getText());
+                double watt = Double.parseDouble(wattInput.getText());
 
-            // Ambil ulang data dari database
-            List<Electricity> electricityList = controller.getAllElectricity();
-            // Bersihkan tabel sebelum menambahkan data
-            table.getItems().clear();
-            // Tambahkan kembali semua data ke dalam tabel
-            table.getItems().addAll(electricityList);
+                if (jam < 0 || watt < 0) {
+                    showAlert("Input Error", "Jam dan Watt tidak boleh negatif!");
+                    nameInput.clear();
+                    jamInput.clear();
+                    wattInput.clear();
+                } else {
+                    controller.addElectricity(new Electricity(name, jam, watt));
+                    nameInput.clear();
+                    jamInput.clear();
+                    wattInput.clear();
+
+                    // Ambil ulang data dari database
+                    List<Electricity> electricityList = controller.getAllElectricity();
+                    // Bersihkan tabel sebelum menambahkan data
+                    table.getItems().clear();
+                    // Tambahkan kembali semua data ke dalam tabel
+                    table.getItems().addAll(electricityList);
+                }
+            } catch (NumberFormatException ex) {
+                showAlert("Input Error", "Jam dan Watt harus berupa angka!");
+                jamInput.clear();
+                wattInput.clear();
+            }
         });
 
-        Button clearButton = new Button("C");
-        GridPane.setConstraints(clearButton, 1, 5);
-        clearButton.setPrefWidth(34);
-        clearButton.setPrefHeight(32);
-        addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
-        clearButton.setLayoutX(212);
-        clearButton.setLayoutY(325);
-        clearButton.setOnAction(e -> {
-            controller.clearAllElectricity();
-            // Ambil ulang data dari database
-            List<Electricity> electricityListAfterDelete = controller.getAllElectricity();
-            // Bersihkan tabel sebelum menambahkan data
-            table.getItems().clear();
-            // Tambahkan kembali semua data ke dalam tabel
-            table.getItems().addAll(electricityListAfterDelete);
-        });
 
-        Button calculateButton = new Button("Pilih Golongan");
-        GolonganScene gls = new GolonganScene(stage, controller);
-        GridPane.setConstraints(calculateButton, 1, 4);
-        addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
-        calculateButton.setPrefWidth(229);
-        calculateButton.setPrefHeight(32);
-        calculateButton.setLayoutX(373);
-        calculateButton.setLayoutY(322);
-        calculateButton.setOnAction(e -> gls.show());
 
         Button listButton = new Button("Daftar");
         GridPane.setConstraints(listButton, 1, 6);
@@ -135,21 +124,16 @@ public class ElectricityView {
         String btn = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10; -fx-font-weight: bold;";
 
         listButton.setStyle(btn);
-        calculateButton.setStyle(btn);
         addButton.setStyle(btn);
-        clearButton.setStyle(btn);
 
 
         VBox nama = new VBox(nameLabel, nameInput);
         VBox jam = new VBox(jamLabel, jamInput);
         VBox watt = new VBox(wattLabel, wattInput);
-        HBox buton = new HBox(5,addButton, calculateButton, clearButton);
+        HBox buton = new HBox(50,addButton, listButton);
         VBox you = new VBox(10,nama, jam, watt);
-        HBox daftar = new HBox(listButton);
-        daftar.setAlignment(Pos.CENTER);
-        VBox bawa = new VBox(10,buton, daftar);
-        VBox all = new VBox(80,you, bawa);
-        all.setPadding(new Insets(32,0,0,205));
+        VBox all = new VBox(80,you, buton);
+        all.setPadding(new Insets(46,0,0,240));
 
 
 
@@ -173,5 +157,12 @@ public class ElectricityView {
 
     public void start(Stage stage2) {
     
+    }
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

@@ -26,20 +26,23 @@ public class DIScene {
 
     public void show() {
         Button B_2 = new Button("B2(6600 VA)");
+        B_2.getStyleClass().add("button-kategori");
         B_2.setOnAction(e -> {
-            double hargaPerKwh = 1444;
+            double hargaPerKwh = 1444.70;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
 
         Button B_3 = new Button("B3(200 kVA)");
+        B_3.getStyleClass().add("button-kategori");
         B_3.setOnAction(e -> {
-            double hargaPerKwh = 1114;
+            double hargaPerKwh = 1114.70;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
             hasilScene.show();
         });
 
         Button I_3 = new Button("I3(200 kVA)");
+        I_3.getStyleClass().add("button-kategori");
         I_3.setOnAction(e -> {
             double hargaPerKwh = 1114;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
@@ -47,6 +50,7 @@ public class DIScene {
         });
 
         Button I_4 = new Button("I4(30.000 kVA)");
+        I_4.getStyleClass().add("button-kategori");
         I_4.setOnAction(e -> {
             double hargaPerKwh = 996.74;
             HasilScene hasilScene = new HasilScene(stage, controller, hargaPerKwh);
@@ -54,6 +58,7 @@ public class DIScene {
         });
 
         Button kembali = new Button("Kembali");
+        kembali.getStyleClass().add("button-kembali");
         kembali.setOnAction(e -> {
             GolonganScene golonganScene = new GolonganScene(stage, controller);
             golonganScene.show();
@@ -64,18 +69,7 @@ public class DIScene {
         rectangle.setArcHeight(70);
         rectangle.setArcWidth(70);
 
-        String buttonStyle = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10;";
-        B_2.setStyle(buttonStyle);
-        B_3.setStyle(buttonStyle);
-        I_3.setStyle(buttonStyle);
-        I_4.setStyle(buttonStyle);
-        kembali.setStyle(buttonStyle);
 
-        B_2.setPrefWidth(200);
-        B_3.setPrefWidth(200);
-        I_3.setPrefWidth(200);
-        I_4.setPrefWidth(200);
-        kembali.setPrefWidth(100);
 
         String label = "-fx-background-color: #4A4942; -fx-text-fill: white; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;-fx-background-radius: 25;";
         Label tangga = new Label("INDUSTRI DAN BISNIS");
