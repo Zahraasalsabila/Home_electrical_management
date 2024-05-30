@@ -12,8 +12,8 @@ Judul Proyek 	: Home electrical management
 
 Nama Pendamping 	: Muhammad Thoriq Ali Said 
 Tim Juri :
-1.	Hamsa
-2.	Aqsa
+1.	dimasukkan setelah pengajuan proposal project
+2.	dan digunakan saat pengajuan seminar aplikasi
 
 Executive Summary : 
 Konsumsi energi yang tidak efisien di rumah tangga merupakan salah satu penyebab utama peningkatan tagihan listrik dan emisi karbon yang tinggi. Banyak orang tidak memiliki alat yang tepat untuk memantau dan mengelola penggunaan energi mereka, sehingga sulit untuk mengidentifikasi dan mengurangi pemborosan energi.
