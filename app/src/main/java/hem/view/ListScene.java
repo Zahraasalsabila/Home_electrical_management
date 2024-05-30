@@ -3,6 +3,7 @@ package hem.view;
 import hem.controller.ElectricityController;
 import hem.model.Electricity;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -34,8 +35,21 @@ public class ListScene {
         List<Electricity> electricityList = controller.getAllElectricity();
         table.getItems().addAll(electricityList);
 
+        Button home = new Button("Kembali");
+        home.setOnAction(e -> {
+            ElectricityView home1 = new ElectricityView(stage, controller);
+            home1.show();
+        });
+
+        String buttonStyle = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10;  -fx-font-weight: bold;";
+        home.setStyle(buttonStyle);
+        home.setPrefWidth(100);
+
+
+
         VBox layout = new VBox(10);
         layout.getChildren().addAll(table);
+        layout.getChildren().add(home);
 
         Scene scene = new Scene(layout, 740, 480);
         scene.getStylesheets().add(getClass().getResource("/style/Styles.css").toExternalForm());

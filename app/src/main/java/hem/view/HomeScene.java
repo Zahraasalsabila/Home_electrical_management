@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.geometry.Insets;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 
@@ -21,23 +20,17 @@ public class HomeScene {
 
     public void show() {
         ElectricityView eview = new ElectricityView(stage,controller);
-        Image image = new Image("/png/BackgroundStart.png"); // Adjust the path as needed
+        Image image = new Image("/png/BackgroundStart.png"); 
         ImageView imageView = new ImageView(image);
 
         Button mulai = new Button("Start");
-        mulai.setStyle("-fx-background-color: #FFF4CC; -fx-font-size: 20px; -fx-font-style: italic; -fx-border-radius: 9px;");
+        mulai.setStyle("-fx-background-color: #FFF4CC; -fx-font-size: 20px; -fx-font-style: italic; -fx-border-radius: 10px;");
         mulai.getStyleClass().add("button");
         mulai.setPrefWidth(164);
         mulai.setPrefHeight(34);
         mulai.setLayoutX(288);
         mulai.setLayoutY(339);
-        mulai.setOnAction(e -> eview.show());
-        // GolonganScene golonganScene = new GolonganScene(stage, controller);
-        // golonganScene.show();
-            // ElectricityView electricityView = new ElectricityView(stage, controller);
-            // electricityView.show();
-            
-            
+        mulai.setOnAction(e -> eview.show()); 
 
         
         StackPane stackPane = new StackPane();
