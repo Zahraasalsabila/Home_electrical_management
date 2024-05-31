@@ -52,7 +52,7 @@ public class ElectricityView {
         nameInput.setStyle(la);
         GridPane.setConstraints(nameInput, 1, 0);
 
-        Label jamLabel = new Label("Pemakaian:");
+        Label jamLabel = new Label("Lama Pemakaian:");
         jamLabel.setStyle(label);
         GridPane.setConstraints(jamLabel, 0, 1);
         TextField jamInput = new TextField();
@@ -68,7 +68,7 @@ public class ElectricityView {
         wattInput.setPrefSize(229, 32);
         GridPane.setConstraints(wattInput, 1, 2);
 
-        Button addButton = new Button("tambah");
+        Button addButton = new Button("Tambah");
         GridPane.setConstraints(addButton, 1, 3);
         addButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
         addButton.setPrefWidth(96);
@@ -122,6 +122,7 @@ public class ElectricityView {
         });
 
         String btn = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10; -fx-font-weight: bold;";
+
 
         listButton.setStyle(btn);
         addButton.setStyle(btn);

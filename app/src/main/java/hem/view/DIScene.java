@@ -58,11 +58,15 @@ public class DIScene {
         });
 
         Button kembali = new Button("Kembali");
-        kembali.getStyleClass().add("button-kembali");
+        // kembali.getStyleClass().add("button-kategori");
         kembali.setOnAction(e -> {
             GolonganScene golonganScene = new GolonganScene(stage, controller);
             golonganScene.show();
         });
+
+        String buttonStyle = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10; -fx-font-weight: bold;";
+        kembali.setStyle(buttonStyle);
+        kembali.setPrefWidth(100);
 
         Rectangle rectangle = new Rectangle(353, 456);
         rectangle.setFill(Color.web("092173"));
@@ -71,12 +75,11 @@ public class DIScene {
 
 
 
-        String label = "-fx-background-color: #4A4942; -fx-text-fill: white; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;-fx-background-radius: 25;";
-        Label tangga = new Label("INDUSTRI DAN BISNIS");
-        tangga.setStyle(label);
-        tangga.setAlignment(Pos.CENTER);
-        tangga.setPrefWidth(200);
-        HBox atas = new HBox(tangga);
+        Label industri = new Label("INDUSTRI DAN BISNIS");
+        industri.getStyleClass().add("labelAtas");
+        industri.setAlignment(Pos.CENTER);
+        industri.setPrefWidth(200);
+        HBox atas = new HBox(industri);
         atas.setPadding(new Insets(10,0,0,270));
 
         VBox home = new VBox(kembali);
@@ -104,6 +107,7 @@ public class DIScene {
  
  
          Scene scene = new Scene(layout, 740, 480);
+         scene.getStylesheets().add(getClass().getResource("/style/Styles.css").toExternalForm());
          stage.setScene(scene);
          stage.show();
     }

@@ -87,9 +87,9 @@ public class DRSScene {
         R_3.setPrefWidth(200);
         kembali.setPrefWidth(100);
 
-        String label = "-fx-background-color: #4A4942; -fx-text-fill: white; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;-fx-background-radius: 25;  -fx-font-weight: bold;";
+
         Label tangga = new Label("RUMAH TANGGA");
-        tangga.setStyle(label);
+        tangga.getStyleClass().add("labelAtas");
         tangga.setAlignment(Pos.CENTER);
         tangga.setPrefWidth(200);
         HBox atas = new HBox(tangga);
@@ -123,6 +123,7 @@ public class DRSScene {
 
 
         Scene scene = new Scene(layout, 740, 480);
+        scene.getStylesheets().add(getClass().getResource("/style/Styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

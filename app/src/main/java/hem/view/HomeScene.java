@@ -24,8 +24,7 @@ public class HomeScene {
         ImageView imageView = new ImageView(image);
 
         Button mulai = new Button("Start");
-        mulai.setStyle("-fx-background-color: #FFF4CC; -fx-font-size: 20px; -fx-font-style: italic; -fx-border-radius: 10px;");
-        mulai.getStyleClass().add("button");
+        mulai.getStyleClass().add("button-start");
         mulai.setPrefWidth(164);
         mulai.setPrefHeight(34);
         mulai.setLayoutX(288);

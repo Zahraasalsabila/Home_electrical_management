@@ -59,7 +59,7 @@ public class DPScene {
         rectangle.setArcHeight(70);
         rectangle.setArcWidth(70);
 
-        String buttonStyle = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10;";
+        String buttonStyle = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;  -fx-background-radius: 10;  -fx-font-weight: bold;";
         P_1.setStyle(buttonStyle);
         P_2.setStyle(buttonStyle);
         P_3.setStyle(buttonStyle);
@@ -70,12 +70,11 @@ public class DPScene {
         P_3.setPrefWidth(200);
         kembali.setPrefWidth(100);
 
-        String label = "-fx-background-color: #4A4942; -fx-text-fill: white; -fx-font-size: 16px; -set-font-family : Semi Bold Italic;-fx-background-radius: 25;";
-        Label tangga = new Label("INDUSTRI DAN BISNIS");
-        tangga.setStyle(label);
-        tangga.setAlignment(Pos.CENTER);
-        tangga.setPrefWidth(200);
-        HBox atas = new HBox(tangga);
+        Label pemerintah = new Label("PEMERINTAH");
+        pemerintah.getStyleClass().add("labelAtas");
+        pemerintah.setAlignment(Pos.CENTER);
+        pemerintah.setPrefWidth(200);
+        HBox atas = new HBox(pemerintah);
         atas.setPadding(new Insets(10,0,0,270));
 
         VBox home = new VBox(kembali);
@@ -103,6 +102,7 @@ public class DPScene {
  
  
          Scene scene = new Scene(layout, 740, 480);
+         scene.getStylesheets().add(getClass().getResource("/style/Styles.css").toExternalForm());
          stage.setScene(scene);
          stage.show();
 

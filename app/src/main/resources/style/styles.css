@@ -18,6 +18,14 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+.button-start{
+    -fx-background-color: #092173; 
+    -fx-text-fill: white;
+    -fx-font-size: 20px; 
+    -fx-font-style: Semi Bold Italic; 
+    -fx-font-weight: bold;
+    -fx-border-radius: 10px
+}
 .button-golongan{
     -fx-background-color: #CBC9BF; 
     -fx-border-radius: 7px;
@@ -28,8 +36,35 @@
     -fx-background-color: #CBC9BF; 
     -fx-text-fill: black; 
     -fx-font-size: 16px; 
-    -fx-font-family: "Semi Bold Italic";  
+    -fx-font-family: "Semi Bold Italic"; 
+    -fx-font-weight: bold; 
     -fx-background-radius: 10;
+}
+.button-list{
+    -fx-background-color: #CBC9BF; 
+    -fx-text-fill: black; 
+    -fx-font-size: 16px; 
+    -fx-font-family: 'Semi Bold Italic'; 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold;
+}
+.button-listC{
+    -fx-background-color: #CBC9BF; 
+    -fx-text-fill: red; 
+    -fx-font-size: 16px; 
+    -fx-font-family: 'Semi Bold Italic'; 
+    -fx-background-radius: 10; 
+    -fx-font-weight: bold;
+}
+
+/*rumahT, industri, pemerintah*/
+.labelAtas{
+    -fx-background-color: #4A4942; 
+    -fx-text-fill: white; 
+    -fx-font-size: 16px; 
+    -set-font-family : Semi Bold Italic;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
 }
 
 /* Styles.css */

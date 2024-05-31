@@ -42,20 +42,26 @@ public class ListScene {
         Button home = new Button("Kembali");
         home.setOnAction(e -> {
             ElectricityView home1 = new ElectricityView(stage, controller);
+            // home.setPrefWidth(300);
+            // home.getStyleClass().add("button-list");
             home1.show();
         });
+        home.setMaxWidth(100);
+        home.getStyleClass().add("button-list");
+        // home.setPrefHeight(40);
 
         Button calculateButton = new Button("Pilih Golongan");
         GolonganScene gls = new GolonganScene(stage, controller);
-        calculateButton.getStyleClass().add("button-golongan");
-        calculateButton.setPrefWidth(229);
-        calculateButton.setPrefHeight(32);
+        calculateButton.getStyleClass().add("button-list");
+        calculateButton.setMaxWidth(150);
+        calculateButton.setPrefHeight(40);
         calculateButton.setOnAction(e -> gls.show());
 
         Button clearButton = new Button("Hapus");
-        clearButton.setPrefWidth(34);
-        clearButton.setPrefHeight(32);
-        clearButton.setStyle("-fx-background-color: #CBC9BF; -fx-border-radius: 7px;");
+        clearButton.getStyleClass().add("button-listC");
+        clearButton.setMaxWidth(100);
+        // clearButton.setPrefWidth(40);
+        // clearButton.setPrefHeight(32);
         clearButton.setOnAction(e -> {
             controller.clearAllElectricity();
             List<Electricity> electricityListAfterDelete = controller.getAllElectricity();
@@ -63,14 +69,31 @@ public class ListScene {
             table.getItems().addAll(electricityListAfterDelete);
         });
 
-        String buttonStyle = "-fx-background-color: #CBC9BF; -fx-text-fill: black; -fx-font-size: 16px; -fx-font-family: 'Semi Bold Italic'; -fx-background-radius: 10; -fx-font-weight: bold;";
-        home.setStyle(buttonStyle);
-        home.setPrefWidth(100);
+        
 
-        HBox pilih = new HBox(clearButton, home);
-        pilih.setSpacing(10);
+        
+        // HBox buttonBox = new HBox(10, home, clearButton, calculateButton);
+        // buttonBox.setPadding(new Insets(10));
+        // buttonBox.setSpacing(10);
 
-        VBox layout = new VBox(10, table, calculateButton, pilih);
+        // VBox layout = new VBox(10, table, buttonBox);
+        // layout.setPadding(new Insets(10));
+
+        HBox cal = new HBox(calculateButton);
+        cal.setPadding(new Insets(0,0,0,-540));
+        HBox pos = new HBox(10, cal, clearButton, home);
+        pos.setPadding(new Insets(0,0,0,540));
+
+
+
+        // GridPane position = new GridPane();
+        // position.setHgap(10);
+        // position.setVgap(10);
+        // position.add(home, 52, 0);
+        // position.add(clearButton, 45, 0);
+        // position.add(calculateButton, 0, 0);
+
+        VBox layout = new VBox(10, table, pos);
         layout.setPadding(new Insets(10));
 
         Scene scene = new Scene(layout, 740, 480);
